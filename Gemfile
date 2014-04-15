@@ -34,6 +34,7 @@ end
 
 gem 'paperclip', '~> 3'
 gem 'aws-sdk' 
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development, :test do
 	gem 'rspec-rails'
