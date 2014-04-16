@@ -42,7 +42,7 @@ describe 'posts index page' do
   end
 
   context 'with posts' do
-    before { Post.create(description: 'Some awesome snap') }
+    before {create(:post)}
 
     it 'displays the post' do
       visit '/posts'
