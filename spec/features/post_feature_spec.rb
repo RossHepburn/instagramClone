@@ -28,6 +28,17 @@ describe 'posts index page' do
         expect(page).to have_content 'error'
       end
     end
+
+    describe 'with tags' do
+      it 'adds to the tag with the post' do
+        visit '/posts/new'
+        fill_in 'Description', with: 'My holiday pic'
+        fill_in 'Tags', with: '#yolo, #swag'
+        click_button 'Create Post'
+
+        expect(page).to have_content '#yolo, #swag'
+      end
+    end
   end
 
   context 'with posts' do
