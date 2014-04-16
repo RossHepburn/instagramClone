@@ -37,5 +37,14 @@ describe 'posts index page' do
       visit '/posts'
       expect(page).to have_content 'Some awesome snap'
     end
+
+    describe 'deleting a post' do
+      it 'removes the post' do
+        visit '/posts'
+        click_link 'Delete'
+
+        expect(page).not_to have_content 'Some awesome snap'
+      end
+    end
   end
 end

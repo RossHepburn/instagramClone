@@ -35,6 +35,7 @@ end
 gem 'paperclip', '~> 3'
 gem 'aws-sdk' 
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 group :development, :test do
 	gem 'rspec-rails'
