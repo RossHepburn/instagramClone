@@ -8,7 +8,7 @@
             <h3><%= post.description %></h3>
             <p>
               <% post.tags.each do |tag| %>
-                <%= tag.name %>
+                <%= link_to tag.name, tag %>
               <% end %>
             </p>
             <p>

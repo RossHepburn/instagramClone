@@ -58,4 +58,31 @@ describe 'posts index page' do
       end
     end
   end
+
+  context 'with post with tags' do 
+    before do 
+      create(:post, tag_names: '#yolo #swag')
+      create(:post, tag_names: '#hello world')
+    end
+
+     describe 'clicking a tag' do
+      it 'shows the photos for that tag' do
+        visit '/posts'
+        click_link '#yolo'
+        expect(page).to have_content 'Some awesome snap'
+      end
+    
+      it 'does not show photos without a tag' do
+        visit '/posts'
+        click_link '#yolo'
+        expect(page).not_to have_content 'Hello world'
+      end
+
+      it 'uses a pretty URL' do
+        visit '/posts'
+        click_link '#yolo'
+        expect(current_path).to eq '/tags/yolo'
+      end
+    end
+  end
 end

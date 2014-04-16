@@ -1,4 +1,6 @@
 InstagramClone::Application.routes.draw do
+  resources :tags, only: [:show]
+
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -17,6 +17,12 @@ describe Post do
         expect(post.tags.first.name).to eq '#makersswag'
       end
 
+      it 'transforms tags to lowercase' do
+        post = create(:post, tag_names: '#YoLo')
+
+        expect(post.tags.first.name).to eq '#yolo'
+      end
+
       it 'should use the tag if it already exists' do
         Tag.create(name: '#swag')
         post = create(:post, tag_names: '#swag')
