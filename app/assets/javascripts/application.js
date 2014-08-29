@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.ui.all
+//= require inputosaurus
 //= require_tree .
+
+$(document).ready(function(){
+  $('#post_tag_names').inputosaurus({
+    inputDelimiters: [' '],
+    outputDelimiter: ' ',
+    width: '750px'
+  });  
+})
